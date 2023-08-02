@@ -12,15 +12,15 @@ public struct Token {
     /// Personal Access Token
     var pat:String
     /// Bearer Token
-    var access_token: String?
+    var accesstoken: String?
     /// Is token valid?
     var isValid: Bool {
         return true
     }
     
-    public init(pat:String,access_token:String? = nil) {
+    public init(pat : String , accesstoken : String? = nil) {
         self.pat = pat
-        self.access_token = access_token
+        self.accesstoken = accesstoken
     }
 }
 
@@ -33,14 +33,14 @@ actor AuthManager {
     static let Authenticated = PassthroughSubject<Bool, Never>()
     private var currentToken: Token?
     private var refreshTask: Task<Token, Error>?
-    private var store:TokenStore
+    private var store : TokenStore
     
-    public init(store:TokenStore = UserDefaultsStore()) {
+    public init(store : TokenStore = UserDefaultsStore()) {
         self.store = store
         self.currentToken = store.get(key: "token")
     }
     
-    static func IsAuthenticated() -> Bool {
+    static func isAuthenticated() -> Bool {
         print("Is Authenticated")
         return UserDefaults.standard.string(forKey: "pat") != nil
     }
