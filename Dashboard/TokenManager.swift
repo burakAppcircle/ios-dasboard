@@ -17,8 +17,8 @@ public protocol TokenStore {
 class UserDefaultsStore: TokenStore {
     func get(key: String) -> Token? {
         if let pat = UserDefaults.standard.string(forKey: "pat") {
-            let access_token = UserDefaults.standard.string(forKey: "access_token")
-            let token = Token(pat: pat, access_token: access_token)
+            let accesstoken = UserDefaults.standard.string(forKey: "access_token")
+            let token = Token(pat: pat, accesstoken: accesstoken)
             return token
         }
         return nil

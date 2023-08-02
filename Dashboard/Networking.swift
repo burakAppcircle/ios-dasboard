@@ -144,14 +144,14 @@ class Networking {
     private func authorizedRequest(from url: URL) async throws -> URLRequest {
         var urlRequest = URLRequest(url: url)
         let token = try await authManager.validToken()
-        if let access_token = token.access_token {
-            urlRequest.setValue("Bearer \(access_token)", forHTTPHeaderField: "Authorization")
+        if let accesstoken = token.accesstoken {
+            urlRequest.setValue("Bearer \(accesstoken)", forHTTPHeaderField: "Authorization")
         }
         return urlRequest
     }
     
     private func authorizedRequest(from endpoint: Endpoint) async throws -> URLRequest {
-        var urlRequest:URLRequest
+        var urlRequest : URLRequest
         switch endpoint.httpMethod {
         case .get:
             urlRequest = try await self.get(from: endpoint)
@@ -160,8 +160,8 @@ class Networking {
         }
         
         let token = try await authManager.validToken()
-        if let access_token = token.access_token {
-            urlRequest.setValue("Bearer \(access_token)", forHTTPHeaderField: "Authorization")
+        if let accesstoken = token.accesstoken {
+            urlRequest.setValue("Bearer \(accesstoken)", forHTTPHeaderField: "Authorization")
         }
         return urlRequest
     }

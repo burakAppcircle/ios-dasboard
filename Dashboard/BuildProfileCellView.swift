@@ -33,6 +33,10 @@ struct BuildProfileCellView: View {
 
 struct BuildProfileCellView_Previews: PreviewProvider {
     static var previews: some View {
-        BuildProfileCellView(profile: BuildProfile(id: "111222333", organizationId: "333333", name: "iOS App", os: 1, buildPlatformType: 1, gitProviderName: "github", repositoryName: "asdsad", repositoryUrl: "abcd", autoDistributeCount: 1, autoStoreSubmitCount: 2, autoBuildCount: 3, createDate: Date(), lastBuildDate: Date(), buildStatus: 1, pinned: true, branches: ["main","develop"], hookId: nil, buildCount: 55, profileSettings: ProfileSettings(pullRequestSettings: [], pushSettings: [], tagSettings: []), workflowCount: 3))
+        BuildProfileCellView(profile: BuildProfile(id:  "1", organizationId: "123", name: "iOS", os: 1,
+                                                   buildPlatformType: 1, gitProviderName: "git", repositoryName: "asdsad", repositoryUrl: "abcd", autoDistributeCount: 1,
+                                                   autoStoreSubmitCount: 2, autoBuildCount: 3, createDate: Date(),
+                                                   lastBuildDate: Date(), buildStatus: 1, pinned: true, branches: ["main", "develop"], hookId: nil, buildCount: 55,
+                                                   profileSettings: ProfileSettings(pullRequestSettings: [], pushSettings: [], tagSettings: []), workflowCount: 3))
     }
 }
