@@ -3,7 +3,9 @@
 //  Dashboard
 //
 //  Created by Mustafa on 17.08.2022.
-//
+//  Danger with SwiftLint
+//  extensions changed
+//  azure push
 
 import SwiftUI
 
